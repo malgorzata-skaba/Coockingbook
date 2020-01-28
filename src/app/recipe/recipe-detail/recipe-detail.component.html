@@ -19,7 +19,7 @@
 <div class="row">
     <div class="col-sm-12" id="list-tab" role="tablist">
         <ul class="list-group">
-            <li class="list-group-item" *ngFor="let ingredient of selectedRecipe.ingredient">{{ingredient.name}}: {{ingredient.amount}} {{ingredient.unit}}</li>
+            <li class="list-group-item" *ngFor="let ingredient of selectedRecipe?.ingredient">{{ingredient?.name}}: {{ingredient?.amount}} {{ingredient?.unit}}</li>
         </ul>
     </div>
 </div>
