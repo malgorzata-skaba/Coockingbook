@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="col-sm-10">
+        <h2 class="text-center">Shopping List</h2>
+        <app-shoping-list-add></app-shoping-list-add>
+        <hr>
+        <ul class="list-group">
+            <a href="" class="list-group-item" style="cursor:pointer" *ngFor="let ingredient of ingredients">{{ingredient.name}}: {{ingredient.amount}} {{ingredient.unit}}</a>
+        </ul>
+    </div>
+</div>
