@@ -45,16 +45,10 @@ export class RecipeListComponent implements OnInit {
           new Ingredient("100", 2,"g"),
           new Ingredient("Tomato sauce", 200,"ml"),
         ]),
-    
-      
-
-  
-  ]
+  ];
   constructor() { }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {  }
   onClick(eventRecipe:Recipe){
     this.recipeOnClick.emit(eventRecipe);
   }

@@ -10,6 +10,7 @@ import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.comp
 import { RecipeItemComponent } from './recipe/recipe-list/recipe-item.component';
 import { ShoppingListAddComponent } from './shopping-list/shopping-list-add.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
