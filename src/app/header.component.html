@@ -1,19 +1,18 @@
 <header>
     <ul class="nav nav-pills">
-        <li role="presentation"><a href="#">Kochrezepte</a></li>
-        <li role="presentation"><a href="#">Einkaufliste</a></li>
-        <li>
-            <div class="dropdown">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
-                        Dropdown trigger
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dLabel">
-                    <li><a href="" class="dropdown-item">Speichern</a></li>
-                    <li><a href="" class="dropdown-item">Laden</a>
-                    </li>
-                </ul>
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active" [routerLink]="['/recipe']">Kochrezepte</a></li>
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active" [routerLink]="['/shoppingList']">Einkaufliste</a></li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Vervaltung
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                <li><a href="" class="dropdown-item">Speichern</a></li>
+                <li><a href="" class="dropdown-item">Laden</a>
+                </li>
+            </ul>
 
-            </div>
+
         </li>
     </ul>
 </header>

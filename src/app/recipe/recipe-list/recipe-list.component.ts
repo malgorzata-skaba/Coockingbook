@@ -1,11 +1,13 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
-  styles: []
+  styles: [`
+  `]
 })
 export class RecipeListComponent implements OnInit {
 
@@ -47,7 +49,8 @@ export class RecipeListComponent implements OnInit {
   //         new Ingredient("Tomato sauce", 200,"ml"),
   //       ]),
   // ];
-  constructor(private recipeService:RecipeService) { }
+  constructor(private recipeService:RecipeService,
+    private router:Router) { }
   recipes: Recipe[];
   
   ngOnInit() {
@@ -55,6 +58,10 @@ export class RecipeListComponent implements OnInit {
   }
   onClick(eventRecipe:Recipe){
     //this.recipeOnClick.emit(eventRecipe);
+  }
+  onNewRecipe(){
+    this.router.navigate(['/recipe','new']);
+    console.log("nacisnelm");
     
   }
 }

@@ -1,6 +1,6 @@
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
-import { EventEmitter } from '@angular/core';
+// import { EventEmitter } from '@angular/core';
 
 export class RecipeService{
 
@@ -40,13 +40,20 @@ private recipes:Recipe[] = [
           new Ingredient("Tomato sauce", 200,"ml"),
       ]),
   ];
-  pushedRecipes = new EventEmitter<Recipe>();
+  // pushedRecipes = new EventEmitter<Recipe>();
 
   getRecpies():Recipe[]{
     return this.recipes;
   }
-  
-  pushRecipe(recipe:Recipe){
-    this.pushedRecipes.emit(recipe);
+  getRecipe (id:number):Recipe{
+    return this.recipes[id];
   }
+
+  deleteRecipe(id:number){
+    this.recipes.splice(id,1);
+  }
+  
+//   pushRecipe(recipe:Recipe){
+//     this.pushedRecipes.emit(recipe);
+//   }
 }

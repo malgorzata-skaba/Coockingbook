@@ -1,23 +1,23 @@
 <div class="row">
-    <div class="col-sm-12 text-center">
-        <img src="{{ selectedRecipe?.imagePath }}" alt="" class="rounded mx-auto img-responsive">
+    <div class="col-sm-10">
+        <img src="{{ selectedRecipe?.imagePath }}" alt="">
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-12">
-        <h1 class="text-center">{{ selectedRecipe?.name }}</h1>
+    <div class="col-sm-10">
+        <h1>{{ selectedRecipe?.name }}</h1>
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-12 text-center">
+    <div class="col-sm-10">
         <button class="btn btn-success" (click)="addIngredients()"> Add to shopping list </button>
-        <button class="btn btn-warning"> Edit </button>
-        <button class="btn btn-danger"> Delete </button>
+        <button class="btn btn-warning" (click)="onRecipeEdit()"> Edit </button>
+        <button class="btn btn-danger" (click)="onDelete()"> Delete </button>
     </div>
 </div>
 <hr>
 <div class="row">
-    <div class="col-sm-12" id="list-tab" role="tablist">
+    <div class="col-sm-10">
         <ul class="list-group">
             <li class="list-group-item" *ngFor="let ingredient of selectedRecipe?.ingredients">{{ingredient?.name}}: {{ingredient?.amount}} {{ingredient?.unit}}</li>
         </ul>
@@ -25,7 +25,7 @@
 </div>
 <hr>
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-10">
         <p>{{ selectedRecipe?.description }}</p>
     </div>
 </div>
