@@ -1,1 +1,74 @@
-<p>Bearbeiten</p>
+<div class="row">
+    <div class="col-sm-12">
+        <form [formGroup]="myForm" (ngSubmit)="onAddNewRecipe()">
+            <div class="row">
+                <div class="col-sm-12">
+                    <button class="btn btn-success" type="submit" [disabled]="!myForm.valid"> Save </button>
+                    <a class="btn btn-danger" role="button" (click)="onCancel()">Cancel</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="title"> Title </label>
+                        <input class="form-control" type="text" id="title" formControlName="name">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="img-url"> Image URL </label>
+                        <input class="form-control" type="text" id="img-url" formControlName="imagePath" #imageUrl>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    Photo
+                    <div class="img">
+                        <img [src]="imageUrl.value">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" rows="6" type="text" formControlName="description"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" formArrayName="ingredients">
+                    <ul class="list-group" *ngFor="let ingredient of getFormGroupOfIngredientsArray(), let i =index">
+                        <div class="row" formGroupName="{{i}}">
+                            <div class="col-sm-5">
+                                <input class="form-control" type="text" formControlName="name">
+                            </div>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="text" formControlName="amount">
+                            </div>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="text" formControlName="unit">
+                            </div>
+                            <div class="col-sm-1">
+                                <button class="btn btn-danger" (click)="onRemoveIngredient(i)"> x </button>
+                            </div>
+                        </div>
+                        <br>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-5"> Name <input type="text" class="form-control" #ingredientName></div>
+    <div class="col-sm-3"> Amount <input type="text" class="form-control" #ingredientAmount></div>
+    <div class="col-sm-3"> Unit <input type="text" class="form-control" #ingredientUnit></div>
+    <div class="col-sm-1"> Add
+        <button type="button" class="btn btn-primary" di (click)="onAddIngredient(ingredientName.value,ingredientAmount.value, ingredientUnit.value)"> + </button>
+    </div>
+</div>

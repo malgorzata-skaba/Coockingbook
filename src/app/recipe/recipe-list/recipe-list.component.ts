@@ -61,7 +61,5 @@ export class RecipeListComponent implements OnInit {
   }
   onNewRecipe(){
     this.router.navigate(['/recipe','new']);
-    console.log("nacisnelm");
-    
   }
 }

@@ -52,8 +52,17 @@ private recipes:Recipe[] = [
   deleteRecipe(id:number){
     this.recipes.splice(id,1);
   }
+  addRecipe(newRecipe: Recipe){
+    this.recipes.push(newRecipe);
+  }
+  editRecipe(oldRecipe: Recipe, newRecipe:Recipe){
+    let indexOfOldRecipe = this.recipes.indexOf(oldRecipe)
+    this.recipes[indexOfOldRecipe] = newRecipe;
+  }
   
 //   pushRecipe(recipe:Recipe){
 //     this.pushedRecipes.emit(recipe);
 //   }
+
+
 }

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-recipe-start',
   template: `
-  <div class="row justify-content-center">
+  <div class="row">
     <h1>Bitte ein Recept auswählen</h1>
   </div>
   `,

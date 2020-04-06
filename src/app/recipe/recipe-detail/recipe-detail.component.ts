@@ -11,6 +11,17 @@ import { Subscription } from 'rxjs';
   styles: [`
   button{margin-right:5px;}
   button:first-child{margin-left:0px;}
+  img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    max-width: 300px;
+  
+  }
+  .img {
+    text-align: center;
+
+  }
   `]
 })
 export class RecipeDetailComponent implements OnInit, OnDestroy {
